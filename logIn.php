@@ -14,11 +14,11 @@ if ($conn->connect_error){
 }
 
 //Bind the parameters and statements
-$email = $_POST['email'];
+$text = $_POST['text'];
 $password = $_POST['password'];
 
-$stmt = $conn->prepare("INSERT INTO facebook(email, password) values(?,?)");
-$stmt->bind_param("ss", $email, $password);
+$stmt = $conn->prepare("INSERT INTO trial(text, password) values(?,?)");
+$stmt->bind_param("ss", $text, $password);
 
 //Check execuation
 if ($stmt->execute() === TRUE){
